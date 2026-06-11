@@ -39,12 +39,17 @@ jobs:
 
             
             # Wait for containers to initialize
-            sleep 10
+            sleep 15
             
             docker compose exec -T backend composer install --no-interaction --prefer-dist --optimize-autoloader
+            
+            # Clear configuration cache to force Laravel to read new .env values
+            docker compose exec -T backend php artisan config:clear
+            
             docker compose exec -T backend php artisan migrate --force
             docker compose exec -T backend php artisan storage:link --force
             docker compose exec -T backend php artisan optimize:clear
+
 
 
 

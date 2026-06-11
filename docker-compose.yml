@@ -82,7 +82,7 @@ services:
     container_name: cms_phpmyadmin
     restart: unless-stopped
     ports:
-      - "${PHPMYADMIN_PORT:-8080}:80"
+      - "${PHPMYADMIN_PORT:-8085}:80"
     environment:
       PMA_HOST: mysql
       PMA_PORT: 3306
