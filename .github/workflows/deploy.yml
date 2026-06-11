@@ -25,9 +25,14 @@ jobs:
             echo "${{ secrets.FRONTEND_ENV }}" > frontend/.env
             docker compose down
             docker compose up -d --build
-            docker exec cms_backend composer install --no-interaction --prefer-dist --optimize-autoloader
-            docker exec cms_backend php artisan migrate --force
-            docker exec cms_backend php artisan storage:link --force
-            docker exec cms_backend php artisan optimize:clear
+            
+            # Wait for containers to initialize
+            sleep 10
+            
+            docker compose exec -T backend composer install --no-interaction --prefer-dist --optimize-autoloader
+            docker compose exec -T backend php artisan migrate --force
+            docker compose exec -T backend php artisan storage:link --force
+            docker compose exec -T backend php artisan optimize:clear
+
 
 
