@@ -7,8 +7,6 @@ services:
     container_name: cms_mysql
     restart: unless-stopped
     tty: true
-    ports:
-      - "3307:3306"
     environment:
       MYSQL_DATABASE: "${DB_DATABASE:-business_cms}"
       MYSQL_ROOT_PASSWORD: "${DB_PASSWORD:-root}"
@@ -22,13 +20,11 @@ services:
     image: redis:alpine
     container_name: cms_redis
     restart: unless-stopped
-    ports:
-      - "6378:6379"
-
     volumes:
       - redis_data:/data
     networks:
       - cms_network
+
 
   # Laravel API Application
   backend:
