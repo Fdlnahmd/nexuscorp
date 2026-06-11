@@ -33,12 +33,9 @@ jobs:
             echo "${{ secrets.BACKEND_ENV }}" > backend/.env
             echo "${{ secrets.FRONTEND_ENV }}" > frontend/.env
             
-            # Stop and remove any conflicting containers by name to prevent port/name allocation errors
-            docker stop cms_mysql cms_redis cms_nginx cms_backend cms_frontend cms_phpmyadmin || true
-            docker rm cms_mysql cms_redis cms_nginx cms_backend cms_frontend cms_phpmyadmin || true
-            
             docker compose down
             docker compose up -d --build
+
 
             
             # Wait for containers to initialize
