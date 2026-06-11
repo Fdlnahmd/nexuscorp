@@ -27,7 +27,8 @@ export default function ManageMessages() {
     setLoading(true);
     try {
       const response = await api.get('/admin/messages');
-      setMessages(response.data);
+      const payload = response.data;
+      setMessages(Array.isArray(payload) ? payload : payload.data ?? []);
     } catch (err) {
       console.error('Failed to fetch messages:', err);
     } finally {

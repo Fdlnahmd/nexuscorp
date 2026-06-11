@@ -56,6 +56,8 @@ jobs:
             sleep 15
             
             docker compose exec -T backend composer install --no-interaction --prefer-dist --optimize-autoloader
+
+            docker compose exec -T backend sh -lc "mkdir -p storage/logs storage/framework/cache storage/framework/sessions storage/framework/views bootstrap/cache && chown -R www-data:www-data storage bootstrap/cache && chmod -R ug+rwX storage bootstrap/cache"
             
             # Clear configuration cache to force Laravel to read new .env values
             docker compose exec -T backend php artisan config:clear
