@@ -29,9 +29,23 @@ jobs:
               git pull origin main
             fi
             
-            echo "${{ secrets.ENV_FILE }}" > .env
-            echo "${{ secrets.BACKEND_ENV }}" > backend/.env
-            echo "${{ secrets.FRONTEND_ENV }}" > frontend/.env
+            if [ -n "${{ secrets.ENV_FILE }}" ]; then
+              printf '%s\n' "${{ secrets.ENV_FILE }}" > .env
+            else
+              echo "ENV_FILE secret is empty; keeping existing .env"
+            fi
+
+            if [ -n "${{ secrets.BACKEND_ENV }}" ]; then
+              printf '%s\n' "${{ secrets.BACKEND_ENV }}" > backend/.env
+            else
+              echo "BACKEND_ENV secret is empty; keeping existing backend/.env"
+            fi
+
+            if [ -n "${{ secrets.FRONTEND_ENV }}" ]; then
+              printf '%s\n' "${{ secrets.FRONTEND_ENV }}" > frontend/.env
+            else
+              echo "FRONTEND_ENV secret is empty; keeping existing frontend/.env"
+            fi
             
             docker compose down
             docker compose up -d --build
