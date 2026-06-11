@@ -68,9 +68,6 @@ services:
     restart: unless-stopped
     ports:
       - "${FRONTEND_PORT:-3005}:3000"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
     depends_on:
       - webserver
     networks:
