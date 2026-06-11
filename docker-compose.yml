@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "${MYSQL_PORT:-3306}:3306"
+      - "3307:3306"
     environment:
       MYSQL_DATABASE: "${DB_DATABASE:-business_cms}"
       MYSQL_ROOT_PASSWORD: "${DB_PASSWORD:-root}"
@@ -23,7 +23,8 @@ services:
     container_name: cms_redis
     restart: unless-stopped
     ports:
-      - "${REDIS_PORT:-6379}:6379"
+      - "6378:6379"
+
     volumes:
       - redis_data:/data
     networks:
