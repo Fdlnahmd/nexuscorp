@@ -18,8 +18,17 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT || 22 }}
           script: |
+            # Create directory if it doesn't exist
+            mkdir -p ${{ secrets.PROJECT_PATH }}
             cd ${{ secrets.PROJECT_PATH }}
-            git pull origin main
+            
+            # Clone repository if not already cloned, otherwise pull changes
+            if [ ! -d ".git" ]; then
+              git clone https://github.com/Fdlnahmd/nexuscorp.git .
+            else
+              git pull origin main
+            fi
+            
             echo "${{ secrets.ENV_FILE }}" > .env
             echo "${{ secrets.BACKEND_ENV }}" > backend/.env
             echo "${{ secrets.FRONTEND_ENV }}" > frontend/.env
@@ -33,6 +42,7 @@ jobs:
             docker compose exec -T backend php artisan migrate --force
             docker compose exec -T backend php artisan storage:link --force
             docker compose exec -T backend php artisan optimize:clear
+
 
 
 
