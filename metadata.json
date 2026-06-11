@@ -1,0 +1,8 @@
+{
+  "name": "NexusBusiness Profile & CMS",
+  "description": "A clean, modern business profile and CMS dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
