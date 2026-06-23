@@ -129,7 +129,7 @@ export default function Home() {
               <FadeIn key={index} direction="up" delay={index * 100}>
                 <div className="text-center px-4 flex flex-col items-center">
                   <div className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-1">{stat.value}</div>
-                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{stat.label}</div>
+                  <div className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">{stat.label}</div>
                 </div>
               </FadeIn>
             ))}

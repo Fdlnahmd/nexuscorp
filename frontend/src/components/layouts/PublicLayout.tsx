@@ -190,7 +190,7 @@ export default function PublicLayout() {
             </div>
             
             <div>
-              <h4 className="text-slate-800 font-bold mb-4 border-b border-slate-100 pb-2 inline-block">Quick Links</h4>
+              <h3 className="text-slate-800 font-bold mb-4 border-b border-slate-200 pb-2 inline-block">Quick Links</h3>
               <ul className="space-y-3">
                 {['Home', 'About Us', 'Our Services', 'Portfolio', 'Contact'].map(link => (
                   <li key={link}>
@@ -204,7 +204,7 @@ export default function PublicLayout() {
             </div>
             
             <div>
-              <h4 className="text-slate-800 font-bold mb-4 border-b border-slate-100 pb-2 inline-block">Services</h4>
+              <h3 className="text-slate-800 font-bold mb-4 border-b border-slate-200 pb-2 inline-block">Services</h3>
               <ul className="space-y-3">
                 {['Strategic Consulting', 'Digital Transformation', 'Financial Advisory', 'Marketing Solutions'].map(link => (
                   <li key={link}>
@@ -218,7 +218,7 @@ export default function PublicLayout() {
             </div>
 
             <div>
-              <h4 className="text-slate-800 font-bold mb-4 border-b border-slate-100 pb-2 inline-block">Contact</h4>
+              <h3 className="text-slate-800 font-bold mb-4 border-b border-slate-200 pb-2 inline-block">Contact</h3>
               <ul className="space-y-3 text-sm">
                 <li>123 Business Avenue, Suite 400</li>
                 <li>New York, NY 10001</li>

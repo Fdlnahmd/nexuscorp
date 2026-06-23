@@ -106,7 +106,7 @@ export default function Contact({ isSection = false }: ContactProps) {
                       <MapPin size={20} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-800 text-sm">Address</h4>
+                      <h3 className="font-bold text-slate-800 text-sm">Address</h3>
                       <p className="text-xs text-slate-500 leading-relaxed mt-1">
                         123 Business Avenue, Suite 400<br />New York, NY 10001
                       </p>
@@ -118,7 +118,7 @@ export default function Contact({ isSection = false }: ContactProps) {
                       <Mail size={20} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-800 text-sm">Email</h4>
+                      <h3 className="font-bold text-slate-800 text-sm">Email</h3>
                       <p className="text-xs text-slate-500 leading-relaxed mt-1">
                         hello@nexuscorp.com
                       </p>
@@ -130,7 +130,7 @@ export default function Contact({ isSection = false }: ContactProps) {
                       <Phone size={20} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-800 text-sm">Phone</h4>
+                      <h3 className="font-bold text-slate-800 text-sm">Phone</h3>
                       <p className="text-xs text-slate-500 leading-relaxed mt-1">
                         +1 (555) 123-4567
                       </p>
