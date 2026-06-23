@@ -85,7 +85,7 @@ export default function PublicLayout() {
               onClick={(e) => handleNavLinkClick(e, 'home')}
               className="flex items-center gap-3 group"
             >
-              <img src="/logo.png?v=2" alt="NexusCorp Logo" className="w-10 h-10 object-contain group-hover:scale-105 transition-transform" />
+              <img src="/logo.png?v=3" alt="NexusCorp Logo" className="w-10 h-10 object-contain group-hover:scale-105 transition-transform" />
               <span className="font-bold text-xl tracking-tight text-slate-900">Nexus<span className="text-blue-600">Corp</span></span>
             </a>
 
@@ -181,7 +181,7 @@ export default function PublicLayout() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
             <div className="col-span-1 md:col-span-1">
               <Link to="/" className="flex items-center gap-3 mb-4 group">
-                <img src="/logo.png?v=2" alt="NexusCorp Logo" className="w-8 h-8 object-contain group-hover:scale-105 transition-transform" />
+                <img src="/logo.png?v=3" alt="NexusCorp Logo" className="w-8 h-8 object-contain group-hover:scale-105 transition-transform" />
                 <span className="font-bold text-xl tracking-tight text-slate-800">Nexus<span className="text-blue-600">Corp</span></span>
               </Link>
               <p className="text-sm leading-relaxed mb-6">
