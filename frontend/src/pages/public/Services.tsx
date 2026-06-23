@@ -104,7 +104,7 @@ export default function Services({ isSection = false, initialData }: ServicesPro
                 </div>
                 
                 <div className="flex-1 space-y-4">
-                  <h2 className="text-2xl font-bold text-slate-900">{service.title}</h2>
+                  <h3 className="text-2xl font-bold text-slate-900">{service.title}</h3>
                   <p className="text-[15px] text-slate-500 leading-relaxed">
                     {service.description || service.short_description}
                   </p>

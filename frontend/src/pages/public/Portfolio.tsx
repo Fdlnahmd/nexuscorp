@@ -3,6 +3,7 @@ import { ExternalLink, Layers } from 'lucide-react';
 import api from '../../lib/api';
 import PageSkeleton from '../../components/PageSkeleton';
 import FadeIn from '../../components/FadeIn';
+import { getOptimizedImageUrl } from '../../lib/utils';
 
 interface Project {
   id: number;
@@ -117,7 +118,7 @@ export default function Portfolio({ isSection = false, initialData }: PortfolioP
                   <div>
                     <div className="aspect-video bg-slate-50 relative overflow-hidden border-b border-slate-100">
                       {project.image ? (
-                        <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" />
+                        <img src={getOptimizedImageUrl(project.image, 400)} alt={project.title} className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-slate-300"><Layers size={48} /></div>
                       )}

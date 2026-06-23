@@ -164,10 +164,11 @@ export default function Contact({ isSection = false }: ContactProps) {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name</label>
+                      <label htmlFor="contact-name" className="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name</label>
                       <input
                         type="text"
                         name="name"
+                        id="contact-name"
                         required
                         value={formData.name}
                         onChange={handleInputChange}
@@ -176,10 +177,11 @@ export default function Contact({ isSection = false }: ContactProps) {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Email Address</label>
+                      <label htmlFor="contact-email" className="block text-xs font-bold text-slate-700 uppercase mb-1">Email Address</label>
                       <input
                         type="email"
                         name="email"
+                        id="contact-email"
                         required
                         value={formData.email}
                         onChange={handleInputChange}
@@ -190,10 +192,11 @@ export default function Contact({ isSection = false }: ContactProps) {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Phone Number (Optional)</label>
+                      <label htmlFor="contact-phone" className="block text-xs font-bold text-slate-700 uppercase mb-1">Phone Number (Optional)</label>
                       <input
                         type="text"
                         name="phone"
+                        id="contact-phone"
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="w-full px-3.5 py-2 border border-slate-200 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 bg-white text-sm"
@@ -201,10 +204,11 @@ export default function Contact({ isSection = false }: ContactProps) {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Subject</label>
+                      <label htmlFor="contact-subject" className="block text-xs font-bold text-slate-700 uppercase mb-1">Subject</label>
                       <input
                         type="text"
                         name="subject"
+                        id="contact-subject"
                         required
                         value={formData.subject}
                         onChange={handleInputChange}
@@ -214,9 +218,10 @@ export default function Contact({ isSection = false }: ContactProps) {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Your Message</label>
+                    <label htmlFor="contact-message" className="block text-xs font-bold text-slate-700 uppercase mb-1">Your Message</label>
                     <textarea
                       name="message"
+                      id="contact-message"
                       required
                       rows={6}
                       value={formData.message}

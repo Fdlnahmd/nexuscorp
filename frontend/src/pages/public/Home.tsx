@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import api from '../../lib/api';
 import PageSkeleton from '../../components/PageSkeleton';
 import FadeIn from '../../components/FadeIn';
+import { getOptimizedImageUrl } from '../../lib/utils';
 
 // Import Section Components
 import About from './About';
@@ -108,7 +109,7 @@ export default function Home() {
             <FadeIn direction="right">
               <div className="aspect-square bg-slate-100 rounded-[3rem] border-8 border-white shadow-2xl overflow-hidden flex items-center justify-center text-slate-200 w-full max-w-md">
                 {hero?.image ? (
-                  <img src={hero.image} alt="Hero" className="w-full h-full object-cover" />
+                  <img src={getOptimizedImageUrl(hero.image, 600)} alt="Hero" className="w-full h-full object-cover" />
                 ) : (
                   <svg className="w-32 h-32 text-slate-200" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd"></path>
@@ -180,7 +181,7 @@ export default function Home() {
                   
                   <div className="flex items-center gap-4 pt-4 border-t border-slate-100 mt-4">
                     {t.photo ? (
-                      <img src={t.photo} alt={t.client_name} className="w-10 h-10 rounded-full object-cover" />
+                      <img src={getOptimizedImageUrl(t.photo, 80)} alt={t.client_name} className="w-10 h-10 rounded-full object-cover" />
                     ) : (
                       <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 font-bold text-xs uppercase">
                         {t.client_name.substring(0, 2)}

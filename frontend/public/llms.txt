@@ -1,0 +1,11 @@
+# NexusCorp - Corporate Profile & CMS
+
+> A modern, decoupled corporate profile website and Content Management System dashboard built for Nexus Corporation.
+
+## Navigation
+- [Home](https://nexuscorp.nexvol.xyz/) - Primary landing page with company summary, statistics, and highlights.
+- [About Us](https://nexuscorp.nexvol.xyz/#about) - Core strategy, vision, and advisory leadership team details.
+- [Services](https://nexuscorp.nexvol.xyz/#services) - Professional consulting, transformation, financial advisory, and cloud services.
+- [Portfolio](https://nexuscorp.nexvol.xyz/#portfolio) - Success stories and case studies of our clients.
+- [Blog & Articles](https://nexuscorp.nexvol.xyz/#blog) - Corporate insights, trends, and financial strategy guides.
+- [Contact Us](https://nexuscorp.nexvol.xyz/#contact) - Office locations and contact form for project inquiries.

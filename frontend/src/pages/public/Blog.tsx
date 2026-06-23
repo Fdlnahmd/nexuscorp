@@ -3,6 +3,7 @@ import { Calendar, User, ArrowLeft, X, BookOpen } from 'lucide-react';
 import api from '../../lib/api';
 import PageSkeleton from '../../components/PageSkeleton';
 import FadeIn from '../../components/FadeIn';
+import { getOptimizedImageUrl } from '../../lib/utils';
 
 interface Article {
   id: number;
@@ -159,7 +160,7 @@ export default function Blog({ isSection = false, initialData }: BlogProps) {
                       <div>
                         <div className="aspect-video bg-slate-50 relative overflow-hidden">
                           {art.thumbnail ? (
-                            <img src={art.thumbnail} alt={art.title} className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" />
+                            <img src={getOptimizedImageUrl(art.thumbnail, 400)} alt={art.title} className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" />
                           ) : (
                             <div className="w-full h-full flex items-center justify-center text-slate-300"><BookOpen size={48} /></div>
                           )}
@@ -229,7 +230,7 @@ export default function Blog({ isSection = false, initialData }: BlogProps) {
               >
                 <ArrowLeft size={16} /> Back to Blog
               </button>
-              <button onClick={handleCloseArticle} className="text-slate-400 hover:text-slate-600 cursor-pointer">
+              <button onClick={handleCloseArticle} className="text-slate-400 hover:text-slate-600 cursor-pointer" aria-label="Close article details">
                 <X size={20} />
               </button>
             </div>
@@ -237,7 +238,7 @@ export default function Blog({ isSection = false, initialData }: BlogProps) {
             <div className="p-6 md:p-8 overflow-y-auto space-y-6">
               <div className="aspect-[21/9] bg-slate-100 rounded-xl overflow-hidden shadow-sm">
                 {activeArticle.thumbnail && (
-                  <img src={activeArticle.thumbnail} alt={activeArticle.title} className="w-full h-full object-cover" />
+                  <img src={getOptimizedImageUrl(activeArticle.thumbnail, 800)} alt={activeArticle.title} className="w-full h-full object-cover" />
                 )}
               </div>
               

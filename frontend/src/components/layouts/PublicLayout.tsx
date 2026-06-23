@@ -123,6 +123,7 @@ export default function PublicLayout() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none"
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -175,7 +176,7 @@ export default function PublicLayout() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white text-slate-500 py-12 md:py-16 border-t border-slate-100">
+      <footer className="bg-white text-slate-600 py-12 md:py-16 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
             <div className="col-span-1 md:col-span-1">
@@ -227,11 +228,11 @@ export default function PublicLayout() {
             </div>
           </div>
           
-          <div className="border-t border-slate-100 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+          <div className="border-t border-slate-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
             <p>&copy; {new Date().getFullYear()} NexusCorp. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-slate-600 transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-slate-600 transition-colors">Terms of Service</a>
+              <a href="#" className="hover:text-slate-700 transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-slate-700 transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>

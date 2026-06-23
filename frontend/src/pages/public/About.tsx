@@ -3,6 +3,7 @@ import { Mail, Linkedin, Twitter, Award, Clock, Users, ShieldCheck } from 'lucid
 import api from '../../lib/api';
 import PageSkeleton from '../../components/PageSkeleton';
 import FadeIn from '../../components/FadeIn';
+import { getOptimizedImageUrl } from '../../lib/utils';
 
 interface TeamMember {
   id: number;
@@ -83,22 +84,22 @@ export default function About({ isSection = false, initialData }: AboutProps) {
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
                 <Award size={32} className="text-blue-600 mb-3" />
-                <h4 className="font-bold text-slate-800 mb-1">High Quality</h4>
+                <h3 className="font-bold text-slate-800 mb-1">High Quality</h3>
                 <p className="text-xs text-slate-500">Premium industry standards in all projects.</p>
               </div>
               <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
                 <Clock size={32} className="text-blue-600 mb-3" />
-                <h4 className="font-bold text-slate-800 mb-1">On-Time Delivery</h4>
+                <h3 className="font-bold text-slate-800 mb-1">On-Time Delivery</h3>
                 <p className="text-xs text-slate-500">Structured execution with zero downtime.</p>
               </div>
               <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
                 <Users size={32} className="text-blue-600 mb-3" />
-                <h4 className="font-bold text-slate-800 mb-1">Expert Team</h4>
+                <h3 className="font-bold text-slate-800 mb-1">Expert Team</h3>
                 <p className="text-xs text-slate-500">Highly qualified professional consultants.</p>
               </div>
               <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
                 <ShieldCheck size={32} className="text-blue-600 mb-3" />
-                <h4 className="font-bold text-slate-800 mb-1">Secure Data</h4>
+                <h3 className="font-bold text-slate-800 mb-1">Secure Data</h3>
                 <p className="text-xs text-slate-500">HIPAA compliant systems and security protocols.</p>
               </div>
             </div>
@@ -124,7 +125,7 @@ export default function About({ isSection = false, initialData }: AboutProps) {
               <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
                 <div className="aspect-[4/5] bg-slate-100 relative flex items-center justify-center text-slate-300">
                   {member.photo ? (
-                    <img src={member.photo} alt={member.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={getOptimizedImageUrl(member.photo, 300)} alt={member.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   ) : (
                     <Users size={64} />
                   )}
@@ -137,17 +138,17 @@ export default function About({ isSection = false, initialData }: AboutProps) {
                   </div>
                   <div className="flex gap-3 mt-4 pt-4 border-t border-slate-100 text-slate-400">
                     {member.email && (
-                      <a href={`mailto:${member.email}`} className="hover:text-blue-600 transition-colors">
+                      <a href={`mailto:${member.email}`} className="hover:text-blue-600 transition-colors" aria-label={`Email ${member.name}`}>
                         <Mail size={16} />
                       </a>
                     )}
                     {member.linkedin && (
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
+                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors" aria-label={`LinkedIn profile of ${member.name}`}>
                         <Linkedin size={16} />
                       </a>
                     )}
                     {member.twitter && (
-                      <a href={member.twitter} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
+                      <a href={member.twitter} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors" aria-label={`Twitter profile of ${member.name}`}>
                         <Twitter size={16} />
                       </a>
                     )}
